@@ -6,7 +6,7 @@ Tim Bücher, Lilas Alrahis, Guilherme Paim, Sergio Bampi, Ozgur Sinanoglu, Hussa
 
 ---
 
-AppGNN performs node-level classification for functional reverse engineering of flattened gate-level netlists. AppGNN builds on top of [GNN-RE]([GitHub - DfX-NYUAD/GNN-RE: GNN-RE datasets for circuit recognition](https://github.com/DfX-NYUAD/GNN-RE)) in order to reverse engineer approximate circuits.
+AppGNN performs node-level classification for functional reverse engineering of flattened gate-level netlists. AppGNN builds on top of [GNN-RE](https://github.com/DfX-NYUAD/GNN-RE) in order to reverse engineer approximate circuits.
 
 ![flow.jpg](./flow.jpg)
 
@@ -73,7 +73,7 @@ The following scripts are required to convert gate-level netlists to graphs that
 ./Netlist_to_graph/Parsers/graph_random_sampling.py
 ```
 
-In `./Netlist_to_graph/Circuits_datasets/example` you can find an example training dataset that contains various circuits used for training and validation (originally obtained from [GNN-RE]([GitHub - DfX-NYUAD/GNN-RE: GNN-RE datasets for circuit recognition](https://github.com/DfX-NYUAD/GNN-RE))). In the same directory, you will also find the circuits of exact adder implementations (`*_Xbit_approxlevel_Y.v`) that will be used by AppGNN to generate a *generic* approximated variant of adder circuits. Finally, a true approximate circuit, obtained from the [EvoApproxLib]([EvoApproxLib | Approximate Circuits Library | 8-bit unsigned multiplier](https://ehw.fit.vutbr.cz/evoapproxlib/)) (Test\_\*.v), is located in the same directory. This circuit is used to test the accuracy of AppGNN and can be replaced by any approximate adder circuit. Replace `graph_leaf_sampling.py` with `graph_random_sampling.py` to perform random node sampling instead of leaf node sampling in the following.
+In `./Netlist_to_graph/Circuits_datasets/example` you can find an example training dataset that contains various circuits used for training and validation (originally obtained from [GNN-RE](https://github.com/DfX-NYUAD/GNN-RE). In the same directory, you will also find the circuits of exact adder implementations (`*_Xbit_approxlevel_Y.v`) that will be used by AppGNN to generate a *generic* approximated variant of adder circuits. Finally, a true approximate circuit, obtained from the [EvoApproxLib](https://ehw.fit.vutbr.cz/evoapproxlib/) (Test\_\*.v), is located in the same directory. This circuit is used to test the accuracy of AppGNN and can be replaced by any approximate adder circuit. Replace `graph_leaf_sampling.py` with `graph_random_sampling.py` to perform random node sampling instead of leaf node sampling in the following.
 
 To run the example, execute the following:
 
@@ -91,4 +91,4 @@ $ python -m graphsaint.tensorflow_version.train --data_prefix ../Netlist_to_grap
 
 #### Acknowledgement
 
-We would like thank [Hanqing Zeng]([Hanqing Zeng](https://sites.google.com/a/usc.edu/zengh/home)) for making [GraphSAINT](https://github.com/GraphSAINT/) code available.
+We would like thank [Hanqing Zeng](https://sites.google.com/a/usc.edu/zengh/home) for making [GraphSAINT](https://github.com/GraphSAINT/) code available.
